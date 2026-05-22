@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-button
+    expand="block"
+    (click)="toggleProdutos()">
+
+    {{ mostrar ? 'Ocultar Produtos' : 'Mostrar Produtos' }}
+
+  </ion-button>
+
+  <div *ngIf="mostrar">
+
+    <ion-card *ngFor="let produto of produtos">
+
+      <img
+        [src]="produto.image"
+        style="height: 200px; object-fit: contain;"
+      >
+
+      <ion-card-header>
+
+        <ion-card-title>
+          {{ produto.title }}
+        </ion-card-title>
+
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <p>
+          <strong>Preço:</strong>
+          R$ {{ produto.price }}
+        </p>
+
+        <p>
+          {{ produto.description }}
+        </p>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>

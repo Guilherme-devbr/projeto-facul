@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Tab 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card *ngIf="produtos.length > 0">
+
+    <img
+      [src]="produtos[indice].image"
+      style="height: 200px; object-fit: contain;"
+    >
+
+    <ion-card-header>
+
+      <ion-card-title>
+        {{ produtos[indice].title }}
+      </ion-card-title>
+
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p>
+        <strong>Preço:</strong>
+        R$ {{ produtos[indice].price }}
+      </p>
+
+      <p>
+        {{ produtos[indice].description }}
+      </p>
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-button
+    expand="block"
+    (click)="anterior()"
+    [disabled]="indice === 0">
+
+    Anterior
+
+  </ion-button>
+
+  <ion-button
+    expand="block"
+    (click)="proximo()"
+    [disabled]="indice === produtos.length - 1">
+
+    Próximo
+
+  </ion-button>
+
+</ion-content>
